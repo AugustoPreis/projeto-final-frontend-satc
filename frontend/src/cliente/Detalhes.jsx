@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Modal, Form, message, Col, Input } from 'antd';
 
-function Detalhes({ currentData, children }) {
+export default function Detalhes({ currentData, children }) {
   const [visible, setVisible] = useState(false);
   const [form] = Form.useForm();
 
@@ -64,5 +64,3 @@ function Detalhes({ currentData, children }) {
     </span>
   );
 }
-
-export default Detalhes;

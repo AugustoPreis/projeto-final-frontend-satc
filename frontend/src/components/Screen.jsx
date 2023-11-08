@@ -1,7 +1,7 @@
 import React from 'react';
 import { Col, Row } from 'antd';
 
-function Screen({ children }) {
+export default function Screen({ children }) {
 
   return (
     <Row justify='space-around'
@@ -13,5 +13,3 @@ function Screen({ children }) {
     </Row>
   );
 }
-
-export default Screen;

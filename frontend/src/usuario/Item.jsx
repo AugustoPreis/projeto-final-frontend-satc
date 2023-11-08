@@ -3,7 +3,7 @@ import { Button, Card, Col, Popconfirm, Row } from 'antd';
 import { EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import Detalhes from './Detalhes';
 
-function Item({ usuario, onDelete }) {
+export default function Item({ usuario, onDelete }) {
 
   return (
     <Card>
@@ -37,5 +37,3 @@ function Item({ usuario, onDelete }) {
     </Card>
   );
 }
-
-export default Item;
