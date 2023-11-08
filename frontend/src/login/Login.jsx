@@ -1,22 +1,14 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button, Col, Form, Input, Row } from 'antd';
 import { UnlockOutlined, UserOutlined } from '@ant-design/icons';
-import auth from '../utils/auth';
 import './login.css';
 
 export default function Login() {
   const [form] = Form.useForm();
   const navigate = useNavigate();
 
-  useEffect(() => {
-    if (auth.isAuthenticated()) {
-      navigate('/dashboard');
-    }
-  }, []);
-
   const handleSubmit = (user) => {
-    auth.login(user);
     navigate('/dashboard');
   }
 
