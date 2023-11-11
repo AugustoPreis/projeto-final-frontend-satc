@@ -4,7 +4,7 @@ import Screen from '../components/Screen';
 import Item from './Item';
 import Detalhes from './Detalhes';
 
-const clientes = [
+export const clientes = [
   { id: 1, nome: 'Helena', contato: 'Telefone: 48 9 9999-9999\nemail: helena@gmail.com' },
   { id: 2, nome: 'Vitor', contato: 'Telefone: 48 9 9999-9999\nemail: vitor@gmail.com' },
   { id: 3, nome: 'Manoel', contato: 'Telefone: 48 9 9999-9999\nemail: manoel@gmail.com' },
