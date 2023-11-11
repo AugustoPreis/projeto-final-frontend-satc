@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ItemInfo({ title, children }) {
+export default function ItemInfo({ title, children }) {
 
   return (
     <div>
@@ -13,5 +13,3 @@ function ItemInfo({ title, children }) {
     </div>
   );
 }
-
-export default ItemInfo;
