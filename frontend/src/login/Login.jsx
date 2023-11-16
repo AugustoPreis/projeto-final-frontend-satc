@@ -1,10 +1,38 @@
 import React from 'react';
-import { Button, Col, Form, Input, Row } from 'antd';
+import { Button, Col, Form, Input, Row, notification } from 'antd';
 import { UnlockOutlined, UserOutlined } from '@ant-design/icons';
+import { useAuth } from '../context/auth';
+import { usuarios } from '../usuario/Usuario';
 import './login.css';
+import { Navigate } from 'react-router-dom';
 
 export default function Login() {
   const [form] = Form.useForm();
+  const { user, setUser } = useAuth();
+
+  const handleSubmit = (user) => {
+    const userDB = usuarios.find((userDB) => {
+      return userDB.login === user.login && userDB.senha === user.senha;
+    });
+
+    if (!userDB) {
+      notification.error({
+        message: 'Erro!',
+        description: 'Login inválido',
+      });
+
+      return;
+    }
+
+    setUser({ ...userDB, senha: null });
+  }
+
+  if (user) {
+    return (
+      <Navigate replace
+        to={{ pathname: '/dashboard' }} />
+    );
+  }
 
   return (
     <Row justify='center'
@@ -16,7 +44,8 @@ export default function Login() {
         sm={14}
         xs={24}>
         <Form form={form}
-          layout='vertical'>
+          layout='vertical'
+          onFinish={handleSubmit}>
           <Row gutter={[10, 0]}
             justify='center'
             className='login-card'>
