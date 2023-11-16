@@ -4,12 +4,12 @@ import Screen from '../components/Screen';
 import Item from './Item';
 import Detalhes from './Detalhes';
 
-const usuarios = [
-  { id: 1, nome: 'Augusto', login: 'augusto' },
-  { id: 2, nome: 'Kauã', login: 'kauã' },
-  { id: 3, nome: 'Lucas', login: 'lucas' },
-  { id: 4, nome: 'João', login: 'joão' },
-  { id: 5, nome: 'Matheus', login: 'matheus' },
+export const usuarios = [
+  { id: 1, nome: 'Augusto', login: 'augusto', senha: '10' },
+  { id: 2, nome: 'Kauã', login: 'kauã', senha: '20' },
+  { id: 3, nome: 'Lucas', login: 'lucas', senha: '30' },
+  { id: 4, nome: 'João', login: 'joão', senha: '40' },
+  { id: 5, nome: 'Matheus', login: 'matheus', senha: '50' },
 ];
 
 export default function Usuario() {
@@ -70,7 +70,7 @@ export default function Usuario() {
               <Col key={el.id}
                 span={24}>
                 <Item usuario={el}
-                onDelete={() => handleDelete(el)}/>
+                  onDelete={() => handleDelete(el)} />
               </Col>
             ))}
           </Row>
