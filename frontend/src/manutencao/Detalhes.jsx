@@ -77,7 +77,9 @@ export default function Detalhes({ currentData, children }) {
                   sm={10}
                   xs={24}>
                   <Form.Item name='status'
-                    label='Status'>
+                    label='Status'
+                    rules={[{ required: true, message: 'Campo obrigatório' }]}
+                  >
                     <Select options={[
                       { label: 'Em aguardo', value: '1' },
                       { label: 'Em andamento', value: '2' },
@@ -87,14 +89,18 @@ export default function Detalhes({ currentData, children }) {
                 </Col>
                 <Col span={24}>
                   <Form.Item name='descricao'
-                    label='Descrição'>
+                    label='Descrição'
+                    rules={[{ required: true, message: 'Campo obrigatório' }]}
+                  >
                     <Input maxLength={100} />
                   </Form.Item>
                 </Col>
                 <Col span={24}>
                   <Form.Item name='cliente'
                     label='Cliente'
-                    extra='Informe o ID do cliente'>
+                    extra='Informe o ID do cliente'
+                    rules={[{ required: true, message: 'Campo obrigatório!' }]}
+                  >
                     <Input onBlur={findCliente}
                       onFocus={(e) => e.target.select?.()} />
                   </Form.Item>
@@ -119,21 +125,27 @@ export default function Detalhes({ currentData, children }) {
                       <Col sm={14}
                         xs={24}>
                         <Form.Item name='marca'
-                          label='Marca'>
+                          label='Marca'
+                          rules={[{ required: true, message: 'Campo obrigatório' }]}
+                        >
                           <Input maxLength={100} />
                         </Form.Item>
                       </Col>
                       <Col sm={10}
                         xs={24}>
                         <Form.Item name='ano'
-                          label='Ano'>
+                          label='Ano'
+                          rules={[{ required: true, message: 'Campo obrigatório' }]}
+                        >
                           <InputNumber maxLength={4}
                             style={{ width: '100%' }} />
                         </Form.Item>
                       </Col>
                       <Col span={24}>
                         <Form.Item name='modelo'
-                          label='Modelo'>
+                          label='Modelo'
+                          rules={[{ required: true, message: 'Campo obrigatório' }]}
+                        >
                           <Input maxLength={150} />
                         </Form.Item>
                       </Col>
