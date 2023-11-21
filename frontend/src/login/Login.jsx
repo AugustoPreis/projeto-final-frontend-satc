@@ -70,6 +70,7 @@ export default function Login() {
                 label='Senha'
                 rules={[{ required: true, message: 'Informe a senha' }]}>
                 <Input.Password placeholder='Informe a senha'
+                  onPressEnter={form.submit}
                   prefix={<UnlockOutlined />} />
               </Form.Item>
             </Col>
