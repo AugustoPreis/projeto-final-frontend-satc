@@ -6,10 +6,10 @@ import { formatStatusManutencao } from '../formatters/statusManutencao';
 import { formatVeiculo } from '../formatters/veiculo';
 import Detalhes from './Detalhes';
 
-export default function Item({ manutencao, onDelete }) {
+export default function Item({ manutencao, onDelete, removeButtons, ...props }) {
 
   return (
-    <Card>
+    <Card {...props} >
       <Row gutter={[10, 5]}
         justify='space-between'
         align='middle'>
@@ -38,24 +38,27 @@ export default function Item({ manutencao, onDelete }) {
             </Col>
           </Row>
         </Col>
-        <Col sm={4}
-          xs={3}>
-          <Row gutter={[5, 5]}
-            justify='end'>
-            <Col>
-              <Detalhes currentData={manutencao}>
-                <Button icon={<EditOutlined />} />
-              </Detalhes>
+        {removeButtons ? null
+          : (
+            <Col sm={4}
+              xs={3}>
+              <Row gutter={[5, 5]}
+                justify='end'>
+                <Col>
+                  <Detalhes currentData={manutencao}>
+                    <Button icon={<EditOutlined />} />
+                  </Detalhes>
+                </Col>
+                <Col>
+                  <Popconfirm title='Deseja deletar?'
+                    onConfirm={onDelete}>
+                    <Button danger
+                      icon={<DeleteOutlined />} />
+                  </Popconfirm>
+                </Col>
+              </Row>
             </Col>
-            <Col>
-              <Popconfirm title='Deseja deletar?'
-                onConfirm={onDelete}>
-                <Button danger
-                  icon={<DeleteOutlined />} />
-              </Popconfirm>
-            </Col>
-          </Row>
-        </Col>
+          )}
       </Row>
     </Card>
   );
