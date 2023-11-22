@@ -4,7 +4,7 @@ import Screen from '../components/Screen';
 import Item from './Item';
 import Detalhes from './Detalhes';
 
-const manutencoes = [
+export const manutencoes = [
   {
     id: 1,
     status: '1',
